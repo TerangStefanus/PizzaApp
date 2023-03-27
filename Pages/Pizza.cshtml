@@ -1,0 +1,59 @@
+﻿@page
+@model PizzaApp.Pages.PizzaModel
+@{
+}
+
+<div class="title">
+	<h1> Our Great Selection Of Pizzas</h1>
+	<p>Choose one, or try our Pizza Builder! Then Order and Done!</p>
+	<p>No need to give any of your details!</p>
+	<p>We Already Know Everything</p>
+</div>
+
+<div class="card-group" >
+
+	<div class="d-inline-flex p-2" style="align-items:center background-color:grey">
+		<div>
+			<img class="img-sm" src="..\images\images\Pizzas\Create.png" style="width:300px" />
+		</div>
+		
+		<div>
+			<h5 style="text-align:left">Create Your Own Pizza</h5>
+			<p style="text-align:left">Make your own pizza with PizzaMaker!</p>
+			<br />
+			<a style="text-align:left" class="btn btn-primary" asp-area="" asp-page="Forms/CustomPizza">Try Now</a>
+		</div>
+		
+		<div>
+
+		</div>
+	</div>
+
+	<div class="d-sm-flex p-2 justify-content-center">
+		<div class="card d-flex ">
+			<img class="card-img-sm-top" src="..\images\images\Pizzas\Margerita.png" style="width:300px" />
+			<h5 class="card-title ">Margarita</h5>
+			<p class="card-text">Lorem Ipsum sir dolot amet sit</p>
+			<a class="btn btn-primary">Get The Pizza!</a>
+		</div>
+
+		<div class="card d-flex ">
+			<img class="card-img-sm-top" src="..\images\images\Pizzas\Bolognese.png" style="width:300px" />
+			<h5 class="card-title ">Bolognese</h5>
+			<p class="card-text">Lorem Ipsum sir dolot amet sit</p>
+			<a class="btn btn-primary">Get The Pizza!</a>
+		</div>
+
+		<div class="card d-flex ">
+			<img class="card-img-sm-top" src="..\images\images\Pizzas\Hawaiian.png" style="width:300px" />
+			<h5 class="card-title ">Hawaiian</h5>
+			<p class="card-text">Lorem Ipsum sir dolot amet sit</p>
+			<a class="btn btn-primary">Get The Pizza!</a>
+		</div>
+	</div>
+
+</div>
+
+
+@*<a class="nav-link text-dark" asp-area="" asp-page="Forms/CustomPizza">Custom Pizza</a>
+<a ass="nav-link text-dark" asp-area="" asp-page="Checkout/Checkout">Checkout</a>*@
