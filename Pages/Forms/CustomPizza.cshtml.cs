@@ -7,14 +7,14 @@ namespace PizzaApp.Pages.Forms
     public class CustomPizzaModel : PageModel
     {
         [BindProperty]
-        public PizzasModel Pizza { get; set; }
+        public PizzasModel? Pizza { get; set; }
         public float PizzaPrice { get; set; }
-        public void onget()
+        public void OnGet()
         {
 
         }
 
-        public IActionResult onpost()
+        public IActionResult OnPost()
         {
             PizzaPrice = Pizza.BasePrice;
 
@@ -27,7 +27,7 @@ namespace PizzaApp.Pages.Forms
             if (Pizza.Ham) PizzaPrice += 1;
             if (Pizza.Beef) PizzaPrice += 1;
 
-            return RedirectToPage("Checkout/Checkout", new { Pizza.PizzaName, PizzaPrice });
+            return RedirectToPage("/Checkout/Checkout", new { Pizza.PizzaName, PizzaPrice });
         }
 
     }
