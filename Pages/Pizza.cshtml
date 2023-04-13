@@ -2,58 +2,42 @@
 @model PizzaApp.Pages.PizzaModel
 @{
 }
+<div class="text-center">
+    <div class="mainText">
+        <h1 class="display-4 text-black text-capitalize">Our great selection of Pizzas</h1>
+        <gr />
+        <h4>Choose one, or try our Pizza Builder! Then Order and Done!</h4>
+        <h4>No need to give any of your details!</h4>
+        <h4>We already know everything!</h4>
+        <p class="smallText"><i>Only one pizza per order.</i></p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-5">
+                <div class="w-100 row makeYourOwnDiv">
+                    <div class="col-4">
+                        <img src="~/images/Pizzas/Create.png" class="w-100" />
+                    </div>
+                    <div class="col-8 align-items-center">
+                        <div class="align-middle makeYourOwnText">
+                            <h3 style="text-align: left;">Create your own Pizza!</h3>
+                            <p style="text-align: left;">Make your own Pizza with our Pizza Creator!</p>
+                            <a class="btn btn-primary" style="float: left" asp-area="" asp-page="Forms/CustomPizza">Try now!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @foreach (var pizza in Model.fakePizzaDB)
+            {
+                var photoPath = "~/images/Pizzas/" + (pizza.ImageTitle + ".png");
 
-<div class="title">
-	<h1> Our Great Selection Of Pizzas</h1>
-	<p>Choose one, or try our Pizza Builder! Then Order and Done!</p>
-	<p>No need to give any of your details!</p>
-	<p>We Already Know Everything</p>
+                <div class="col-4 mb-5">
+                    <a class="pizza-img" asp-area="" asp-page="Checkout/Checkout" asp-route-PizzaName="@pizza.PizzaName" asp-route-ImageTitle="@pizza.ImageTitle" asp-route-PizzaPrice="@pizza.FinalPrice">
+                        <img src="@photoPath" class="w-100" asp-append-version="true" />
+                    </a>
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
 </div>
-
-<div class="card-group" >
-
-	<div class="d-inline-flex p-2" style="align-items:center background-color:grey">
-		<div>
-			<img class="img-sm" src="..\images\images\Pizzas\Create.png" style="width:300px" />
-		</div>
-		
-		<div>
-			<h5 style="text-align:left">Create Your Own Pizza</h5>
-			<p style="text-align:left">Make your own pizza with PizzaMaker!</p>
-			<br />
-			<a style="text-align:left" class="btn btn-primary" asp-area="" asp-page="Forms/CustomPizza">Try Now</a>
-		</div>
-		
-		<div>
-
-		</div>
-	</div>
-
-	<div class="d-sm-flex p-2 justify-content-center">
-		<div class="card d-flex ">
-			<img class="card-img-sm-top" src="..\images\images\Pizzas\Margerita.png" style="width:300px" />
-			<h5 class="card-title ">Margarita</h5>
-			<p class="card-text">Lorem Ipsum sir dolot amet sit</p>
-			<a class="btn btn-primary">Get The Pizza!</a>
-		</div>
-
-		<div class="card d-flex ">
-			<img class="card-img-sm-top" src="..\images\images\Pizzas\Bolognese.png" style="width:300px" />
-			<h5 class="card-title ">Bolognese</h5>
-			<p class="card-text">Lorem Ipsum sir dolot amet sit</p>
-			<a class="btn btn-primary">Get The Pizza!</a>
-		</div>
-
-		<div class="card d-flex ">
-			<img class="card-img-sm-top" src="..\images\images\Pizzas\Hawaiian.png" style="width:300px" />
-			<h5 class="card-title ">Hawaiian</h5>
-			<p class="card-text">Lorem Ipsum sir dolot amet sit</p>
-			<a class="btn btn-primary">Get The Pizza!</a>
-		</div>
-	</div>
-
-</div>
-
-
-@*<a class="nav-link text-dark" asp-area="" asp-page="Forms/CustomPizza">Custom Pizza</a>
-<a ass="nav-link text-dark" asp-area="" asp-page="Checkout/Checkout">Checkout</a>*@
